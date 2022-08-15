@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { createContext, useState } from "react";
+import "./App.css";
+import { Outside } from "./components/Outside/Outside";
+
+export const MyContext = createContext();
 
 function App() {
+  const [isDark, setIsDark] = useState(false);
+
+  const toggleDarkMode = () => {
+    setIsDark(!isDark);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MyContext.Provider value={3}>
+      <div className="App">
+        <Outside isDark={isDark} toggleDarkMode={toggleDarkMode} />
+      </div>
+    </MyContext.Provider>
   );
 }
 

@@ -1,0 +1,27 @@
+.inside {
+  background-color: white;
+  border: solid black 5px;
+  border-radius: 5px;
+  height: 70%;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inside--isDark {
+  border-color: antiquewhite;
+  background-color: gray;
+}
+
+.inside__button {
+  background-color: gray;
+  color: white;
+  border-radius: 5px;
+  border-color: black;
+}
+
+.inside__button--isDark {
+  background-color: white;
+  color: black;
+}

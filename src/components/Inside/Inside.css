@@ -1,5 +1,5 @@
 .inside {
-  background-color: white;
+  background-color: antiquewhite;
   border: solid black 5px;
   border-radius: 5px;
   height: 70%;
@@ -11,7 +11,7 @@
 }
 
 .inside--isDark {
-  border-color: antiquewhite;
+  border-color: rgb(56, 65, 73);
   background-color: gray;
 }
 
@@ -23,6 +23,6 @@
 }
 
 .inside__button--isDark {
-  background-color: white;
+  background-color: antiquewhite;
   color: black;
 }

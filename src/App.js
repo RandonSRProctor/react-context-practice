@@ -5,6 +5,8 @@ import { Outside } from "./components/Outside/Outside";
 export const MyContext = createContext();
 
 function App() {
+  // This is the state for dark mode.  All components use this value
+  // to determine what css classes are applied.
   const [isDark, setIsDark] = useState(false);
 
   const toggleDarkMode = () => {
@@ -12,7 +14,9 @@ function App() {
   };
 
   return (
-    <MyContext.Provider value={3}>
+    <MyContext.Provider
+      value={{ contextIsDark: isDark, contextToggleDarkMode: toggleDarkMode }}
+    >
       <div className="App">
         <Outside isDark={isDark} toggleDarkMode={toggleDarkMode} />
       </div>

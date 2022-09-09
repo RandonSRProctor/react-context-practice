@@ -1,13 +1,21 @@
 import React, { useContext } from "react";
-import { MyContext } from "./../../../../App";
+import { MyContext } from "../../App";
 import "./Inside.css";
 
 export const Inside = ({ isDark, toggleDarkMode }) => {
-  const theNumber = useContext(MyContext);
+  const { contextIsDark, contextToggleDarkMode } = useContext(MyContext);
   return (
     <div className={isDark ? "inside inside--isDark" : "inside"}>
-      <button className="inside__button">
-        Toggle {theNumber} Mode Via Context
+      <h1>Inside</h1>
+      <button
+        className={
+          contextIsDark
+            ? "inside__button inside__button--isDark"
+            : "inside__button"
+        }
+        onClick={contextToggleDarkMode}
+      >
+        Toggle {contextIsDark ? "Light" : "Dark"} Mode Via Context
       </button>
       <button
         className={
